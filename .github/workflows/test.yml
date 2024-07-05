@@ -22,4 +22,6 @@ jobs:
 
       - name: Run action using spin
         run: spin up
-        
+      
+      - name: Run action using spin
+        run: print env
