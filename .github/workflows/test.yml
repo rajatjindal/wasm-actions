@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
     
+      - name: Run action using spin
+        run: print env
+
       - name: setup spin
         uses: fermyon/actions/spin/setup@v1
         with:
@@ -23,5 +26,4 @@ jobs:
       - name: Run action using spin
         run: spin up
       
-      - name: Run action using spin
-        run: print env
+
