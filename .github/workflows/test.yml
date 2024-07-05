@@ -18,7 +18,7 @@ jobs:
           github_token: ${{ github.token }}
         
       - name: setup spin ghaction plugin
-        run: spin plugin install --url https://github.com/rajatjindal/spin-trigger-ghaction/releases/download/canary/trigger-ghaction.json
+        run: spin plugin install --url https://github.com/rajatjindal/spin-trigger-ghaction/releases/download/canary/trigger-ghaction.json --yes
 
       - name: Run action using spin
         run: spin up
