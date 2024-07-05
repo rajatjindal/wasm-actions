@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
     
       - name: Run action using spin
-        run: print env
+        run: printenv
 
       - name: setup spin
         uses: fermyon/actions/spin/setup@v1
