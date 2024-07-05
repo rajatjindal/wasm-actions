@@ -1,0 +1,27 @@
+name: Deploy Good First Issue Bot
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+        env:
+      tinygo-dev-image-tag: sha-744574193b9e213bc2d897d5e5f02ec1c256ff7a
+    steps:
+      - uses: actions/checkout@v3
+    
+      - name: setup spin
+        uses: fermyon/actions/spin/setup@v1
+        with:
+          github_token: ${{ github.token }}
+        
+      - name: setup spin ghaction plugin
+        run: spin plugin install --url https://github.com/rajatjindal/spin-trigger-ghaction/releases/download/canary/trigger-ghaction.json
+
+      - name: Run action using spin
+        run: spin up
+        
