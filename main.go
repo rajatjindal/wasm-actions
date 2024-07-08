@@ -22,8 +22,12 @@ func main() {
 	flagset := flag.NewFlagSet(os.Args[0], flag.ExitOnError)
 	flagset.StringVar(&flags.Version, "version", "latest", "version to install")
 	flagset.StringVar(&flags.GitHubToken, "github-token", "GITHUB_TOKEN", "GitHub token to use for downloading")
-	if len(os.Args) >= 2 {
-		flagset.Parse(os.Args[1:])
+
+	// for some reason spin up --flag-name does not work
+	// workaround is spin up - --flag-name
+	// and yes, spin up -- --flag-name does not work either
+	if len(os.Args) >= 3 {
+		flagset.Parse(os.Args[2:])
 	}
 
 	dir, err := os.MkdirTemp("/spin-ghactions-tmp", "")
