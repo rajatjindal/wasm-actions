@@ -2,8 +2,8 @@ spin_manifest_version = 2
 
 [application]
 authors = ["Rajat Jindal<rajatjindal83@gmail.com>"]
-description = "hello world github action"
-name = "hello-world"
+description = "setup"
+name = "setup wasmtime"
 version = "0.1.0"
 
 [[trigger.ghaction]]
@@ -12,5 +12,6 @@ env = ["USER"]
 
 [component.hello-world]
 source = "main.wasm"
-allowed_outbound_hosts = ["http://google.com"]
+allowed_outbound_hosts = ["http://google.com", "https://objects.githubusercontent.com"]
+files = [{ source = "./tmp", destination = "/tmp" }]
 build = ["tinygo build -x -target=wasip2 --wit-package $(go list -mod=readonly -m -f '{{.Dir}}' github.com/rajatjindal/wasm-actions-sdk)/wit --wit-world cli -o main.wasm -x -work main.go"]

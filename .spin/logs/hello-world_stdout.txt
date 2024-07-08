@@ -1,2 +1,0 @@
-environ[HOME=/Users/rajatjindal USER=rajatjindal GITHUB_ACTIONS=true CI=true]
-expected status code 200, found: 301
