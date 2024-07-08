@@ -27,6 +27,6 @@ jobs:
         run: mkdir spin-ghactions-tmp && spin up - --version v0.3.0
       
       - name: verify the setup
-        run: ./spin-gh-actions-tmp/kubectl-reverse_proxy -h
+        run: ./spin-ghactions-tmp/kubectl-reverse_proxy -h
       
 
