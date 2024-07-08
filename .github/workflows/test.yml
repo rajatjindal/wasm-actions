@@ -29,6 +29,8 @@ jobs:
       - name: verify the setup
         run: |
           ls -ltr ./spin-ghactions-tmp
+          ## https://bytecodealliance.zulipchat.com/#narrow/stream/206238-general/topic/changing.20permissions.20of.20files.20using.20wasi/near/449816965
+          chmod +x ./spin-ghactions-tmp/kubectl-reverse_proxy
           ./spin-ghactions-tmp/kubectl-reverse_proxy -h
       
 
