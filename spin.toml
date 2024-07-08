@@ -12,6 +12,7 @@ env = ["USER"]
 
 [component.hello-world]
 source = "main.wasm"
-allowed_outbound_hosts = ["http://google.com", "https://objects.githubusercontent.com"]
-files = [{ source = "./tmp", destination = "/tmp" }]
+# allowed_outbound_hosts = ["http://google.com", "https://objects.githubusercontent.com"]
+allowed_outbound_hosts = []
+# files = [{ source = "downloads", destination = "/downloads" }]
 build = ["tinygo build -x -target=wasip2 --wit-package $(go list -mod=readonly -m -f '{{.Dir}}' github.com/rajatjindal/wasm-actions-sdk)/wit --wit-world cli -o main.wasm -x -work main.go"]

@@ -24,6 +24,9 @@ jobs:
         run: spin plugin install --url https://github.com/rajatjindal/spin-trigger-ghaction/releases/download/canary/trigger-ghaction.json --yes
 
       - name: Run action using spin
-        run: spin up
+        run: mkdir spin-ghactions-tmp && spin up
+      
+      - name: verify the setup
+        run: ./spin-gh-actions-tmp/kubectl-reverse_proxy -h
       
 
